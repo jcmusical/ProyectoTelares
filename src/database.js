@@ -5,7 +5,7 @@ const pool = createPool({
     port: '3306',
     user: 'prueba01',
     password: 'prueba01',
-    database: 'prueba01'
+    database: 'telares',
 });
 
 export default pool; /* Exporta la var pool (contiene conexion a la BD para que otro archivo lo use*/

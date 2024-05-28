@@ -17,22 +17,22 @@ const storage = multer.diskStorage({
 const upload = multer({storage})
 
 router.get('/add', (req, res) => {
-    res.render('personas/add')
+    res.render('productos/add')
 });
 
 router.post('/add', upload.single('file') , async (req, res) => {
     try {
-        const { name, lastname, age, observacion } = req.body
-        let newPersona = {}
+        const { referencia, tipotelar, precio, descripcion } = req.body
+        let newProducto = {}
         if(req.file){
             const file = req.file
             const imagen_original = file.originalname
             const imagen = file.filename
-            newPersona = { name, lastname, age, observacion, imagen}
+            newProducto = { referencia, tipotelar, precio, descripcion, imagen }
         }else{
-            newPersona = {name, lastname, age, observacion}
+            newProducto = { referencia, tipotelar, precio, descripcion }
         }
-        await pool.query('INSERT INTO personas SET ?', [newPersona]);
+        await pool.query('INSERT INTO productos SET ?', [newProducto]);
         res.redirect('/list');
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -41,8 +41,8 @@ router.post('/add', upload.single('file') , async (req, res) => {
 
 router.get('/list', async (req, res) => {
     try {
-        const [result] = await pool.query('SELECT * FROM personas');
-        res.render('personas/list', { personas: result })
+        const [result] = await pool.query('SELECT * FROM productos');
+        res.render('productos/list', { productos: result })
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
@@ -51,20 +51,20 @@ router.get('/list', async (req, res) => {
 router.get('/delete/:id', async (req, res) => {
     try {
         const { id } = req.params
-        await pool.query('DELETE FROM personas WHERE id = ?', [id]);
+        await pool.query('DELETE FROM productos WHERE id = ?', [id]);
         res.redirect('/list');
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 });
 
-
+// productos llave que se asocia al resultado de la consulta.
 router.get('/edit/:id', async (req, res) => {
     try {
         const { id } = req.params
-        const [persona] = await pool.query('SELECT * FROM personas WHERE id = ?', [id]);
-        const personaEdit = persona[0]
-        res.render('personas/edit', { persona: personaEdit })
+        const [producto] = await pool.query('SELECT * FROM productos WHERE id = ?', [id]);
+        const productoEdit = producto[0]
+        res.render('productos/edit', { productos: productoEdit })
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
@@ -73,17 +73,17 @@ router.get('/edit/:id', async (req, res) => {
 router.post('/edit/:id',  upload.single('file'), async (req, res) => {
     try {
         const { id } = req.params
-        const { name, lastname, age, observacion } = req.body
-        let editPersona = {}
+        const { referencia, tipotelar, precio, descripcion } = req.body
+        let editProducto = {}
         if(req.file){
             const file = req.file
             const imagen_original = file.originalname
             const imagen = file.filename
-            editPersona = { name, lastname, age, observacion, imagen}
+            editProducto = { referencia, tipotelar, precio, descripcion, imagen}
         }else{
-            editPersona = {name, lastname, age, observacion}
+            editProducto = { referencia, tipotelar, precio, descripcion}
         }
-        await pool.query('UPDATE personas SET ? WHERE id = ?', [editPersona, id]);
+        await pool.query('UPDATE productos SET ? WHERE id = ?', [editProducto, id]);
         res.redirect('/list');
     } catch (error) {
         res.status(500).json({ message: error.message });

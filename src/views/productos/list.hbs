@@ -3,7 +3,7 @@
         <style> h3 {color:rgb(63, 163, 163);} </style>
         <h3 class="text-center text-uppercase p-2"> Lista de Productos</h3>
 
-        {{#if personas}}
+        {{#if productos}}
 
             <table class="table text-center">   <!-- Referencia TipoTelar Precio Descripcion Imagen-->
                 <thead>
@@ -18,12 +18,12 @@
                 </thead>
                 <tbody>
                     
-                    {{#each personas}}
+                    {{#each productos}}
                         <tr>
-                            <td> {{name}} </td>
-                            <td> {{lastname}} </td>
-                            <td> {{age}} </td>
-                            <td> {{observacion}} </td>
+                            <td> {{referencia}} </td>
+                            <td> {{tipotelar}} </td>
+                            <td> {{precio}} </td>
+                            <td> {{descripcion}} </td>
                             <td>
                                 <!--
                                 <img src="/uploads/{{imagen}}" class="card-img-top mx-auto m-2 rounded-circle" style="width: 150px; height: 150px;display:block;">
@@ -53,10 +53,10 @@
 
             <div class="card text-center mx-auto">
                 <div class="card-header">
-                    <h3> Debes crear una persona</h3>
+                    <h3> Debes crear un producto</h3>
                 </div>
                 <div class="card-body">
-                    <p>Presiona este boton para que puedas registrar a una persona en la aplicacion</p>
+                    <p>Presiona este boton para que puedas registrar a un producto en la aplicacion</p>
                     <a href="/add" class="btn btn-primary"> Ir a crear</a>
                 </div>
             </div>

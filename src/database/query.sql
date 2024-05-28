@@ -1,12 +1,13 @@
-CREATE DATABASE Prueba01;
+CREATE DATABASE Telares;
 
-USE Prueba01;
+USE Telares;
 
-CREATE TABLE personas(
+CREATE TABLE productos(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
-    lastname VARCHAR(50) NOT NULL,
-    age INT
+    referencia VARCHAR(50) NOT NULL,
+    tipotelar VARCHAR(50) NOT NULL,
+    precio INT,
+    descripcion TEXT
 );
 
-SELECT * FROM personas;
+SELECT * FROM productos;
