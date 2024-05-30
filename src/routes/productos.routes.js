@@ -90,4 +90,23 @@ router.post('/edit/:id',  upload.single('file'), async (req, res) => {
     }
 });
 
+router.get('/quienessomos', ( req , res)=>{
+    res.render('productos/quienessomos')
+});
+
+router.get('/inscripcion', ( req , res)=>{
+    res.render('productos/inscripcion')
+});
+
+
+router.get('/eventos', ( req , res)=>{
+    res.render('productos/eventos')
+});
+
+/*
+router.get('/productos', ( req , res)=>{
+    res.render('productos/productos')
+});
+*/
+
 export default router;

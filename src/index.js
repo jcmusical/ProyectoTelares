@@ -42,6 +42,8 @@ app.get('/', (req, res) => {
     res.render('index') /* Renderizado por {{{body}}} y el */
 });
 app.use(productosRoutes);
+//app.use(suscripcionesRoutes);
+
 
 /* ------------------------------ Public files ------------------------------ */
 app.use(express.static(join(__dirname, 'public')))
