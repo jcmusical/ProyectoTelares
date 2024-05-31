@@ -1,47 +1,152 @@
-<main class="mt-2"> <!-- mt-5 -->
-    <div class="container">
-        <style> h3 {color:rgb(63, 163, 163);} </style>   
-        <style> h4 {color:rgb(196, 78, 211);} </style> 
-        <div class="card mx-auto" style="width:1500px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" type="text/css" href="/css/estilos.css">
+</head>
+
+<main class="principal"> <!-- mt-5 2 absolute  texto-superpuesto  -->
+    <header>
             <div class="card-header">   <!--SEO, optimización para motores de búsqueda (Search Engine Optimization)  rounded-circle   -->
                 <img src="/img/logo.png" alt="logo" class="card-img-top mx-auto m-2 rounded-sm" style="width: 150px; display:block;">     
-                <h3 class="text-uppercase text-center p-4"></h3>
+                <h3 class="text-center p-4">Nuestros productos</h3>
+
             </div>
+    </header>
 
-            <div class="card-body text-justify"> <!-- text-center -->
-                <p>
-                    <h3 style="text-align: center;">Vertical</h3>
-                    <h4 style="text-align: center;">Dibujando con Hilos</h4>
-                    El Telar vertical es uno de los elementos más tradicionales del arte tejido.  Su construcción va desde simples varas o ramas de gran tamaño hasta bastidores portátiles.  Tiene una similitud con los telares bastidor pero su propósito es trabajar mayor cantidad de hilos con libertad de movimientos y técnicas que dan origen a los gobelinos y tapices que conocemos.
-                    El telar NAVAJO permite tejer en carrusel, es decir dando la vuelta al tejido por detrás...esto permite que el tejedor siempre tenga su área de trabajo al frente y no tenga que cambiar de posición durante el avance del tejido.
-                </p>
+<!-- 
+            CARRUSEL DE FOTOS
+            IMPORTANTE: La primera foto debe estar como: "carousel-item active"
+                        Las restantes deben estar como: "carousel-item"
+                <div class="carousel-item active"><img src="..." class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="..." class="d-block w-100" alt="..."></div>
+--> 
 
-                <p>
-                    <h3 style="text-align: center;">Telar Peineta</h3>
-                    <h4 style="text-align: center;">Haciendo tela continua</h4>
-                    Este tipo de telar es muy fácil de manejar, debido a su concepto.  Se trabaja sobre el regazo y sostenido en el borde de una mesa.  Sólo tiene 1 peine constituido por una serie de agujas plásticas enfiladas en donde se enhebran los hilos de urdimbre durante el montaje, pasando cada hebra por el ojo y ranura correspondiente en el peine (formando 2 grupos).
-                    Luego se ubica el peine en posición para pasar la lanzadera y formar el tramado.
-                    En este telar se dispone suficiente hilo para hacer largas piezas de tela dependiendo del proyecto.  
-                    Este telar hace todas las variantes del tejido tafetán.  
-                </p>
-
-                <p>
-                    <h3 style="text-align: center;">Telar de Lizos</h3>
-                    <h4 style="text-align: center;">Haciendo tejido estructurado</h4>
-                    Los tejidos tienen estructuras que requieren manejar los hilos en más de 2 grupos, por eso los telares profesionales llevan 4, 8 o más marcos para producir texturas especiales.
-                    Los telares de mesa son apropiados para lugares reducidos en donde se pueden elaborar lindas telas continuas, el formato de ancho da origen a los modelos LINCE, PUMA, JAGUAR y TIGRE,  todos ellos con urdidor incorporado en la caja de marcos.  
-                </p>
-
-                <p>
-                    <h3 style="text-align: center;">Telares Especiales</h3>
-                    <h4 style="text-align: center;">Haciendo producciones premium</h4>
-                    Una empresa necesita velocidad y refinamiento.  En ese caso es indispensable contar con un asistente de tejido.  El telar inteligente permite mayor rendimiento durante el tejido, contando con la información precisa en tiempo real.  Los telares ASISTIDOS informan los movimientos y corrigen cualquier eventual error en cada pasada; cuentan con un apuntador digital para guiarse durante los procesos de alistamiento y tejido. La versión MECATRÓNICA hace la selección dinámica de los marcos en cada paso, para que el tejedor sólo se preocupe por abrir la urdimbre y pasar la trama..
-                </p>
-
-                <a href="/add" class="btn btn-warning">Crear un producto</a>    <!-- btn btn-primary btn-warning btn-info -->           
-                
+<!-- VERSION 1 - DIAPOSITIVAS CON CONTROLES  -->
+    <div class="container">
+        <div class="div-carrusel">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9" aria-label="Slide 10"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="10" aria-label="Slide 11"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="11" aria-label="Slide 12"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active"><img src="/img/T01.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T02.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T03.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T04.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T05.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T06.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T07.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T08.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T09.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T10.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T11.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T12.JPG" class="d-block w-100" alt="..."></div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
             </div>
-
         </div>
-    </div> 
+    </div>
+
+<footer>
+    <div class="div-piepag">
+        Juan Carlos Martínez Varela - Derechos Reservados 2024
+    </div>
+</footer>
+
 </main>
+
+<!-- 
+
+VERSION 1 - DIAPOSITIVAS CON CONTROLES    
+    <div class="container">
+        <div class="div-carrusel">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9" aria-label="Slide 10"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="10" aria-label="Slide 11"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="11" aria-label="Slide 12"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active"><img src="/img/T01.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T02.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T03.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T04.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T05.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T06.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T07.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T08.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T09.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T10.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T11.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T12.JPG" class="d-block w-100" alt="..."></div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+VERSION 2 - DIAPOSITIVAS AUTOMATICAS
+    <div class="container">
+        <div class="div-carrusel">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active"><img src="/img/T01.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T02.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T03.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T04.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T05.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T06.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T07.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T08.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T09.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T10.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T11.JPG" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="/img/T12.JPG" class="d-block w-100" alt="..."></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+-->
+
+
+
+
+

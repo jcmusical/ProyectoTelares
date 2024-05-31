@@ -1,0 +1,62 @@
+.principal {
+    background-color: rgb(238, 244, 248); /* Establece el color de fondo */
+}
+
+.container {
+    display: flex; /* Usa flexbox */
+    position: relative;
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    border-radius: 10px; /* Bordes redondeados de 10px */
+    border: 2px solid rgb(200, 200, 200); /* Borde sólido de color gris */
+    margin-bottom: 20px;
+    /* height: 100vh;  Opcional: centra verticalmente la imagen en toda la página */
+}
+
+.imagen-con-opacidad {
+    opacity: 0.15;
+}
+
+.texto-superpuesto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    text-align: center;
+}
+
+.div-col {
+    max-width: 100%;
+    width: 900px;
+    text-align: center;
+    /* background-color: #fda2a2; */
+}
+
+.div-carrusel {
+    display: flex; /* Usa flexbox */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    width: 500px;
+    border-radius: 10px; /* Bordes redondeados de 10px */
+    border: 2px solid rgb(200, 200, 200); /* Borde sólido de color gris */
+}
+
+.div-imgpag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-piepag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5;
+    padding-bottom: 5;
+    margin: 5px; /* Todos los márgenes (izq, der, sup e inf = 5px*/
+    background-color: rgb(237, 203, 237); /* Establece el color de fondo en magenta */
+    color: rgb(21, 21, 233); /* Establece el color de texto en azul */
+    height: 50px; /* Establece la altura de la div en 50 píxeles */
+}    
