@@ -2,6 +2,14 @@
         <div class="card-header">   <!--SEO, optimización para motores de búsqueda (Search Engine Optimization)  rounded-circle   -->
             <img src="/img/logo.png" alt="logo" class="card-img-top mx-auto m-2 rounded-sm" style="width: 150px; display:block;">     
             <h3 class="text-uppercase text-center p-4"></h3>
+            <div class="footer text-center" style="justify-content: center; align-items: center; 
+                padding-top: 5; padding-bottom: 5; margin: 5px;  background-color: rgb(238, 230, 197); 
+                color: rgb(0, 0, 0); height: 110px; font-size: large;">
+                <b>Te ofrecemos dos tipos de inscripción:</b><br>
+                Inscripción Tipo 1: Cliente comprador<br>
+                Inscripción Tipo 2: Clases de tejido<br>
+                Inscripción Tipo 3: Feria artesanal<br>
+            </div>
         </div>
 </header>
 
@@ -13,7 +21,13 @@
                     <h3 class="text-uppercase"> Editar Inscripción </h3>
                 </div>
                 <div class="card-body">
+
+<!-- 
                     <form action="/edit/{{inscripciones.id}}" method="post"  enctype="multipart/form-data">
+-->  
+
+
+                    <form action="/editinscripcion/{{inscripciones.id}}" method="post"  enctype="multipart/form-data">
 
                         <div class="input-group mt-2">
                             <label for="nombre" class="input-group-text"> Nombre </label>
@@ -27,7 +41,7 @@
 
                         <div class="input-group mt-2">
                             <label for="telefono" class="input-group-text"> Teléfono </label>
-                            <input class="form-control" type="number" name="telefono" id="telefono" placeholder="Ejemplo:+573009112233" value="{{inscripciones.telefono}}" required >
+                            <input class="form-control" type="text" name="telefono" id="telefono" placeholder="Ejemplo:+573009112233" value="{{inscripciones.telefono}}" required >
                         </div>
 
                         <div class="input-group mt-2">

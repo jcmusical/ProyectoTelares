@@ -4,10 +4,7 @@ import multer from 'multer';
 import path from 'path'
 
 const router = Router(); //Crea un enrutador modular utilizando el módulo express.Router()
-
-/*
-
-*/
+/* */
 const storage = multer.diskStorage({
     destination: 'src/public/uploads/',
     filename: (req, file, cb) => {                          //Mayor o = 0 y Menor que 1
@@ -16,33 +13,25 @@ const storage = multer.diskStorage({
         cb(null, file.fieldname + '-' + uniqueSuffix + ext)
     }
 })
-const upload = multer({storage})
 
+const upload = multer({storage})
 
 router.get('/addinscripcion', (req, res) => {
     res.render('inscripciones/addinscripcion')
 });
 
-router.post('/addinscripcion', async (req, res) => {
+router.post('/addinscripcion', upload.none(), async (req, res) => {
     try {
         const { nombre, email, telefono, tipo  } = req.body
         let newInscripcion = {}
 
+
+
+
+
+
         newInscripcion = { nombre, email, telefono, tipo }
 
-/*
-
-        if(req.file){
-            const file = req.file
-            const imagen_original = file.originalname
-            const imagen = file.filename
-            newProducto = { referencia, tipotelar, precio, descripcion, imagen }
-        }else{
-            newProducto = { referencia, tipotelar, precio, descripcion }
-        }
-
-*/        
-        
         await pool.query('INSERT INTO inscripciones SET ?', [newInscripcion]);
         res.redirect('/listinscripcion');
     } catch (error) {
@@ -81,29 +70,20 @@ router.get('/editinscripcion/:id', async (req, res) => {
     }
 });
 
-/*
-router.post('/editinscripcion/:id',  upload.single('file'), async (req, res) => {
-*/
-
-router.post('/editinscripcion/:id', async (req, res) => {
+router.post('/editinscripcion/:id', upload.none(), async (req, res) => {
     try {
         const { id } = req.params
         const { nombre, email, telefono, tipo } = req.body
-        let editInscripcion = {}
+        let editIns = {}
 
-        editInscripcion = { nombre, email, telefono, tipo }
-/*
-        if(req.file){
-            const file = req.file
-            const imagen_original = file.originalname
-            const imagen = file.filename
-            editProducto = { referencia, tipotelar, precio, descripcion, imagen}
-        }else{
-            editProducto = { nombre, email, telefono, tipo }
-        }
-*/
 
-        await pool.query('UPDATE inscripciones SET ? WHERE id = ?', [editInscripcion, id]);
+
+
+
+
+        editIns = { nombre, email, telefono, tipo }
+
+        await pool.query('UPDATE inscripciones SET ? WHERE id = ?', [editIns, id]);
         res.redirect('/listinscripcion');
     } catch (error) {
         res.status(500).json({ message: error.message });
