@@ -5,6 +5,8 @@ import {join, dirname} from 'path' //Metodos especificos
 import {fileURLToPath} from 'url'
 import { engine } from 'express-handlebars';
 import productosRoutes from './routes/productos.routes.js'
+import inscripcionesRoutes from './routes/inscripciones.routes.js'
+/*                               .\routes\inscripciones.routes.js */
 
 /* ----------------------------- Inicializacion ----------------------------- */
 const app = express();
@@ -42,7 +44,7 @@ app.get('/', (req, res) => {
     res.render('index') /* Renderizado por {{{body}}} y el */
 });
 app.use(productosRoutes);
-//app.use(suscripcionesRoutes);
+app.use(inscripcionesRoutes);
 
 
 /* ------------------------------ Public files ------------------------------ */

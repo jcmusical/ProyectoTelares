@@ -1,0 +1,87 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" type="text/css" href="/css/estilos.css">
+</head>
+
+    <header>
+            <div class="card-header">   <!--SEO, optimización para motores de búsqueda (Search Engine Optimization)     -->
+                <img src="/img/logo.png" alt="logo" class="card-img-top mx-auto m-2 rounded-sm" style="width: 150px; display:block;">     
+                <h3 class="text-uppercase text-center p-4"></h3>
+            </div>
+    </header>
+<div class="container">
+
+    <div class="row mt-5">
+        <style> h3 {color:rgb(63, 163, 163);} </style>
+        <h3 class="text-center text-uppercase p-2"> Lista de inscripciones</h3>
+
+        {{#if productos}}
+
+            <table class="table text-center">   <!-- nombre email telefono tipo -->
+                <thead>
+                    <tr class="table-primary">  <!-- table-success   -->
+                        <th scope="col" class="col-4"> Nombre </th>
+                        <th scope="col"> Email   </th>
+                        <th scope="col"> Teléfono       </th>
+                        <th scope="col"> Tipo inscripción  </th>
+                        <th scope="col"> Acciones   </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    {{#each inscripciones}}
+                        <tr>
+                            <td> {{nombre}} </td>
+                            <td> {{email}} </td>
+                            <td> {{telefono}} </td>
+                            <td> {{tipo}} </td>
+                            <td>
+                                <!--
+                                <img src="/uploads/{{imagen}}" class="card-img-top mx-auto m-2 rounded-circle" style="width: 150px; height: 150px;display:block;">
+
+                                {{#if imagen}}
+                                    <img src="/uploads/{{imagen}}" class="card-img-top mx-auto m-2 rounded-lg" style="width: 150px; height: 150px;display:block;">
+                                {{/if}}
+                                -->
+                                
+                            </td>
+                            <td> 
+                                <div class="btn-group">
+                                    <a href="/editinscripcion/{{id}}" class="btn btn-warning p-2">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+                                    <a href="/deleteinscripcion/{{id}}" class="btn btn-danger p-2">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    {{/each}}
+
+                </tbody>
+            </table>
+
+        {{else}}
+
+            <div class="card text-center mx-auto">
+                <div class="card-header">
+                    <h3> Debes crear una inscripción</h3>
+                </div>
+                <div class="card-body">
+                    <p>Presiona este botón para que puedas registrar una inscripción en la aplicacion</p>
+                    <a href="/addinscripcion" class="btn btn-primary"> Ir a crear</a>
+                </div>
+            </div>
+
+        {{/if}}
+
+    </div>
+</div>
+
+<footer>
+    <div class="div-piepag">
+        Juan Carlos Martínez Varela - Derechos Reservados 2024
+    </div>
+</footer>
