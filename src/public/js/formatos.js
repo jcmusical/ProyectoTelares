@@ -1,5 +1,10 @@
 /*
-    Función para el formato numérico de moneda.
+    Funciones para el 
+    Función que devuelve el formato numérico de moneda mientras se escribe un número.
+    format(dato_string):
+
+    Función que convierte un dato string en número:
+    Por desarrollar.
 */
 
 function format(input)
