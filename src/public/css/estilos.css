@@ -60,3 +60,8 @@
     color: rgb(21, 21, 233); /* Establece el color de texto en azul */
     height: 50px; /* Establece la altura de la div en 50 píxeles */
 }    
+
+.navbar {
+    font-size: large;
+    color: blue;
+}
