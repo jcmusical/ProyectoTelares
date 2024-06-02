@@ -26,7 +26,10 @@
 
                         <div class="input-group mt-2">
                             <label for="precio" class="input-group-text"> Precio </label>
+                            <!-- 
                             <input class="form-control" type="number" name="precio" id="precio" placeholder="0" required >
+                            -->
+                            <input class="form-control" type="text" name="precio" id="precio" onkeyup="format(this)" onchange="format(this)" placeholder="0" required >
                         </div>
 
                         <div class="input-group mt-2">
@@ -48,6 +51,8 @@
         </div>
     </div>
 </div>
+
+<script src="/js/formatomiles.js"></script>
 
 <footer class="footer text-center" style="display: flex; justify-content: center; align-items: center; 
     padding-top: 5; padding-bottom: 5; margin: 5px;  background-color: rgb(237, 203, 237); 
